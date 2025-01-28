@@ -1,7 +1,7 @@
 services:
   python-app:
-    build: .  # Define o contexto de build (usará o Dockerfile no diretório atual)
-    container_name: meu_python_app
+    build: .  
+    container_name: deepseek-bash
     volumes:
-      - ./app:/app  # Monta a pasta local `app` no contêiner
+      - ./app:/app
     restart: unless-stopped
