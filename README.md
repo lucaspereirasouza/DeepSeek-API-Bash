@@ -1,6 +1,7 @@
+
 # DeepSeek API Bash
 
-This repository contains a simple Flask server, an Terminal UI for Bash to Bash communication, that connects to a Docker container to execute Bash commands. The API is designed to be lightweight and easy to use, allowing you to run prompts to return Bash commands to your linux host (preferably and strongly recommended Container or VM). 
+This repository contains a simple Flask server, an Terminal UI for Bash to Bash communication, that connects to a Docker container to execute Bash commands. The API is designed to be lightweight and easy to use, allowing you to run prompts to return Bash commands to your Linux host (preferably and strongly recommended Container or VM).
 
 ## Table of Contents
 
@@ -13,14 +14,18 @@ This repository contains a simple Flask server, an Terminal UI for Bash to Bash 
 - [Contributing](#contributing)
 - [License](#license)
 
-## Features
+---
+
+## Features <a id="features"></a>
 
 - Execute Bash commands inside a Docker container via HTTP requests.
 - Lightweight and easy to set up.
 - Supports custom Docker images.
 - Returns the output of the executed command.
 
-## Prerequisites
+---
+
+## Prerequisites <a id="prerequisites"></a>
 
 Before you begin, ensure you have the following installed:
 
@@ -28,24 +33,31 @@ Before you begin, ensure you have the following installed:
 - **Node.js**: [Install Node.js](https://nodejs.org/) (if you want to modify or run the API locally)
 - **Docker Compose** (optional): [Install Docker Compose](https://docs.docker.com/compose/install/)
 
-## Installation
+---
+
+## Installation <a id="installation"></a>
 
 1. **Clone the repository:**
 
    ```bash
-   git clone [https://github.com/your-username/api-docker-bash-executor.git](https://github.com/lucaspereirasouza/DeepSeek-API-Bash.git)
+   git clone https://github.com/lucaspereirasouza/DeepSeek-API-Bash.git
    ```
 
-2. Run Docker compose for running the virtual machine
+2. **Run Docker Compose to start the virtual machine:**
+
    ```bash
-   Docker compose up
+   docker compose up
    ```
 
-## Usage
+---
+
+## Usage <a id="usage"></a>
 
 Once the container is running, you can send HTTP requests to the API to execute Bash commands inside the Docker container.
 
-### API Endpoints
+---
+
+## API Endpoints <a id="api-endpoints"></a>
 
 - **POST /execute**
 
@@ -68,7 +80,9 @@ Once the container is running, you can send HTTP requests to the API to execute 
   }
   ```
 
-### Examples
+---
+
+## Examples <a id="examples"></a>
 
 1. **Using `curl` to execute a command:**
 
@@ -104,7 +118,9 @@ Once the container is running, you can send HTTP requests to the API to execute 
    }
    ```
 
-## Contributing
+---
+
+## Contributing <a id="contributing"></a>
 
 Contributions are welcome! Please feel free to submit a Pull Request or open an issue if you have any suggestions or find any bugs. :D
 
@@ -114,10 +130,8 @@ Contributions are welcome! Please feel free to submit a Pull Request or open an 
 4. Push to the branch (`git push origin feature/YourFeatureName`).
 5. Open a Pull Request.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ---
 
-Feel free to customize this README to better fit your project's needs!
+## License <a id="license"></a>
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
