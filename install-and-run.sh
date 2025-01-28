@@ -4,10 +4,10 @@ VENV_DIR="venv"
 
 function check_venv() {
     if [ -d "$VENV_DIR" ]; then
-        echo "Ambiente virtual encontrado em $VENV_DIR."
+        echo "Virtual environment : $VENV_DIR."
         return 0
     else
-        echo "Ambiente virtual não encontrado. Criando um novo..."
+        echo "Virtual environment not found, creating a new one..."
         return 1
     fi
 }
