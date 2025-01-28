@@ -1,0 +1,7 @@
+services:
+  deepseek-bash:
+    build: .  
+    container_name: deepseek-bash
+    volumes:
+      - ./app:/app
+    restart: no
