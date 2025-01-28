@@ -1,6 +1,6 @@
-# API Docker Bash Executor
+# DeepSeek API Bash
 
-This repository contains a simple API that connects to a Docker container to execute Bash commands. The API is designed to be lightweight and easy to use, allowing you to run shell commands inside a Docker container from an HTTP request.
+This repository contains a simple Flask server, an Terminal UI for Bash to Bash communication, that connects to a Docker container to execute Bash commands. The API is designed to be lightweight and easy to use, allowing you to run prompts to return Bash commands to your linux host (preferably and strongly recommended Container or VM). 
 
 ## Table of Contents
 
