@@ -3,9 +3,16 @@ import requests
 import subprocess
 import shlex
 
+import os
 from dotenv import load_dotenv
 
 load_dotenv()
+
+DEEPSEEK_API_URL = os.getenv('DEEPSEEK_API_URL')
+DEEPSEEK_API_KEY = os.getenv('DEEPSEEK_API_KEY')
+HOST = os.getenv('HOST')
+PORT = os.getenv('PORT')
+
 
 app = Flask(__name__)
 
@@ -71,5 +78,5 @@ def ask():
 
 # Inicia o servidor
 if __name__ == "__main__":
-    print(f"Servidor rodando em http://{HOST}:{PORT}")
+    print(f"Server running in http://{HOST}:{PORT}")
     app.run(host=HOST, port=PORT)
