@@ -1,7 +1,0 @@
-services:
-  python-app:
-    build: .  
-    container_name: deepseek-bash
-    volumes:
-      - ./app:/app
-    restart: unless-stopped
