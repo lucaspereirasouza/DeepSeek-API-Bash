@@ -8,3 +8,7 @@ WORKDIR /app
 
 COPY . /app
 
+RUN chmod +x ./install.sh
+RUN ./install.sh
+
+CMD [ "/bin/bash", "-c run.sh" ]
