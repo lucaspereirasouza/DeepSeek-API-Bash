@@ -1,7 +1,7 @@
 import requests
 
 # Configurações
-SERVER_URL = "http://localhost:5000/ask"  # URL do servidor Flask
+SERVER_URL = "https://127.0.0.0:5000/ask"  # URL do servidor Flask
 
 def ask_server(prompt: str, args: dict = None) -> str:
     """
@@ -19,7 +19,6 @@ def ask_server(prompt: str, args: dict = None) -> str:
         return f"Erro ao conectar ao servidor: {e}"
 
 def main():
-    print("Bem-vindo ao cliente de perguntas!")
     while True:
         # Solicita a pergunta ao usuário
         prompt = input("\nDigite sua pergunta (ou 'sair' para encerrar): ").strip()
