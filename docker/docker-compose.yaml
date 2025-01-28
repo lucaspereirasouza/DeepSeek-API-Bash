@@ -1,0 +1,7 @@
+services:
+  python-app:
+    build: .  # Define o contexto de build (usará o Dockerfile no diretório atual)
+    container_name: meu_python_app
+    volumes:
+      - ./app:/app  # Monta a pasta local `app` no contêiner
+    restart: unless-stopped
