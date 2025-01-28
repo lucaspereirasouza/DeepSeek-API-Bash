@@ -24,6 +24,3 @@ if ! check_venv; then
 fi
 
 source $VENV_DIR/bin/activate
-
-
-./run.sh
