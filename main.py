@@ -49,7 +49,7 @@ def execute_bash_command(command):
     except subprocess.CalledProcessError as e:
         return f"Error executing command: {e.stderr}"
     except Exception as e:
-        return f" Tf man, what are you doing? UNEXPECTED ERROR: {str(e)}"
+        return f"man, what are you doing? UNEXPECTED ERROR: {str(e)}"
 
 @app.route("/ask", methods=["POST"])
 def ask():
@@ -58,8 +58,7 @@ def ask():
     args = data.get("args", {})  
 
     if not prompt:
-        return jsonify({"error": "O campo 'prompt' é obrigatório."}), 400
-
+        return jsonify({"error": "It is necessary to ask something in the field."}), 400
 
     if args:
         for key, value in args.items():
@@ -68,9 +67,7 @@ def ask():
 
     response = ask_deepseek(prompt)
 
-
     if "bash" in response.lower() or "&&" in response or ";" in response:
- 
         command_output = execute_bash_command(response)
         return jsonify({"response": response, "command_output": command_output})
     else:

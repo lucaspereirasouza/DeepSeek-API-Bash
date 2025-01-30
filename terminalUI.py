@@ -9,33 +9,34 @@ SERVER_URL = os.getenv('HOST')  # URL do servidor Flask
 SERVER_PORT = os.getenv('PORT')
 def ask_server(prompt: str) -> str:
     """
-    Envie um prompt para o servidor.
+    Send a prompt to the server.
     """
     data = {"prompt": prompt}
    
     try:
-        response = requests.post(SERVER_URL+":"+SERVER_PORT, json=data)
+        url = "http://"+SERVER_URL+":"+SERVER_PORT+"/ask"
+        response = requests.post(url, json=data)
         response.raise_for_status()  
         return response.json()
     except requests.exceptions.RequestException as e:
-        return f"Erro ao conectar ao servidor: {e}"
+        return f"Fail to conect to the server: {e}"
 
 def main():
     while True:
     
-        prompt = input("\nDigite sua pergunta (ou 'sair' para encerrar): ").strip()
-        if prompt.lower() == "sair":
-            print("Encerrando o cliente...")
+        prompt = input("\n Type your prompt (press ctrl + c or type 'quit'): ").strip()
+        if prompt.lower() == "quit":
+            print("Goodbye!...")
             break
 
-        print("\nEnviando pergunta ao servidor...")
+        print("\n Sending Prompt to the server...")
         result = ask_server(prompt)
 
         if isinstance(result, dict):
-            print("\nResposta do servidor:")
-            print(f"Resposta: {result.get('response')}")
+            print("\n Server callback:")
+            print(f"Response: {result.get('response')}")
             if "command_output" in result:
-                print(f"Saída do comando: {result.get('command_output')}")
+                print(f"Command return: {result.get('command_output')}")
         else:
             print(result)  
 
