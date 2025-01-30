@@ -70,13 +70,12 @@ def ask():
 
 
     if "bash" in response.lower() or "&&" in response or ";" in response:
-        # Executa o comando bash
+ 
         command_output = execute_bash_command(response)
         return jsonify({"response": response, "command_output": command_output})
     else:
         return jsonify({"response": response})
 
-# Inicia o servidor
 if __name__ == "__main__":
     print(f"Server running in http://{HOST}:{PORT}")
     app.run(host=HOST, port=PORT)
