@@ -4,7 +4,7 @@ DIR=$(dirname "$0")
 PY_="$DIR/venv/bin/python"
 
 echo "Starting Flask..."
-$PY_ main.py &
+$PY_ main.py 
 
 FLASK_PID=$!
 
